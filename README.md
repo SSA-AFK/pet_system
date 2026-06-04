@@ -22,7 +22,7 @@
 
 ### 核心亮点
 
-- 🤖 **AI 智能助手** — 基于 Gemini AI 的经营分析、宠物健康咨询、洗护推荐
+- 🤖 **AI 智能助手** — 基于 AI 的经营分析、宠物健康咨询、洗护推荐
 - 📅 **在线预约系统** — 5 步流程：选项目 → 填信息 → 选时间 → 确认 → 支付
 - 🎫 **会员体系** — 普通会员 / 黄金卡 / 钻石卡，阶梯折扣
 - 📊 **数据化经营** — 仪表盘、营收分析、客户画像、AI 经营建议
@@ -36,8 +36,13 @@
 <img src="row/img/f589719d56a63101fe755934219c7c7d.png" alt="宠店智管 Pro" width="900" />
 </div>
 
+<div align="center">
+<img src="row/img/e918192997d2a51025b0cb26eef65970.png" alt="宠店智管 Pro" width="900" />
+</div>
 
-
+<div align="center">
+<img src="row/img/9da8871a134f77dac7a7a0f63e1199e7.png" alt="宠店智管 Pro" width="900" />
+</div>
 ---
 
 ## 🏗️ 技术架构
