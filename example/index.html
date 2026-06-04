@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花间集 · 田园森系女装</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --cream: #FDF8F0;
+    --cream-dark: #F5EDDF;
+    --beige: #E8DCC8;
+    --beige-warm: #D4C4A8;
+    --green-deep: #4A6741;
+    --green-mid: #6B8F5E;
+    --green-light: #8FB87A;
+    --green-pale: #C8DDB5;
+    --green-faint: #E8F0E0;
+    --brown: #8B6F47;
+    --brown-light: #A68B6B;
+    --text-dark: #3A3226;
+    --text-mid: #5C5043;
+    --text-light: #8A7E70;
+    --white: #FFFDF9;
+    --shadow-soft: 0 2px 20px rgba(74, 103, 65, 0.08);
+    --shadow-card: 0 4px 24px rgba(74, 103, 65, 0.1);
+    --shadow-hover: 0 8px 40px rgba(74, 103, 65, 0.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-lg: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== 顶部公告条 ===== */
+  .top-bar {
+    background: linear-gradient(90deg, var(--green-deep), var(--green-mid));
+    color: var(--green-faint);
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .top-bar::before {
+    content: '🌿';
+    margin-right: 8px;
+  }
+  .top-bar::after {
+    content: '🌿';
+    margin-left: 8px;
+  }
+  .top-bar .marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* ===== 店铺头图 Hero ===== */
+  .hero {
+    position: relative;
+    height: 520px;
+    background: linear-gradient(135deg, #E8F0E0 0%, #F5EDDF 40%, #FDF8F0 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-bg-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-bg-decor .leaf {
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.08;
+    animation: floatLeaf 12s ease-in-out infinite;
+  }
+  .hero-bg-decor .leaf:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 100px; }
+  .hero-bg-decor .leaf:nth-child(2) { top: 60%; right: 8%; animation-delay: 3s; font-size: 60px; }
+  .hero-bg-decor .leaf:nth-child(3) { bottom: 10%; left: 15%; animation-delay: 6s; font-size: 90px; }
+  .hero-bg-decor .leaf:nth-child(4) { top: 20%; right: 20%; animation-delay: 9s; font-size: 70px; }
+  @keyframes floatLeaf {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+  }
+  .hero-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--green-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 42px;
+    box-shadow: var(--shadow-card);
+  }
+  .hero-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+    letter-spacing: 8px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-mid);
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-num {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+  .hero-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+    color: var(--white);
+    padding: 14px 48px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(74, 103, 65, 0.3);
+  }
+  .hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(74, 103, 65, 0.4);
+  }
+
+  /* ===== 公共样式 ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .section {
+    padding: 70px 0;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green-deep);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+  .section-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green-light), transparent);
+    margin: 12px auto;
+  }
+  .section-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+  }
+
+  /* ===== 店铺公告 ===== */
+  .announcement {
+    background: var(--white);
+    border: 1px solid var(--beige);
+    border-radius: var(--radius);
+    padding: 24px 32px;
+    margin: -30px auto 0;
+    max-width: 800px;
+    position: relative;
+    z-index: 3;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .announcement-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .announcement-tag {
+    background: var(--green-faint);
+    color: var(--green-deep);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    flex-shrink: 0;
+    letter-spacing: 1px;
+  }
+  .announcement-text {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+  .announcement-text strong {
+    color: var(--green-deep);
+  }
+
+  /* ===== 分类导航 ===== */
+  .categories {
+    background: var(--white);
+  }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+  .cat-item {
+    text-align: center;
+    padding: 28px 16px;
+    border-radius: var(--radius);
+    background: var(--cream);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .cat-item:hover {
+    border-color: var(--green-pale);
+    background: var(--green-faint);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  .cat-emoji {
+    font-size: 40px;
+    margin-bottom: 12px;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .cat-item:hover .cat-emoji {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  .cat-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .cat-count {
+    font-size: 11px;
+    color: var(--text-light);
+  }
+
+  /* ===== 爆款推荐 ===== */
+  .hot { background: var(--cream); }
+  .hot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .product-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--beige);
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--green-pale);
+  }
+  .product-img {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-img-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    transition: transform 0.5s;
+  }
+  .product-card:hover .product-img-inner {
+    transform: scale(1.05);
+  }
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, #E8725A, #D4553E);
+    color: white;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .product-badge.new {
+    background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+  }
+  .product-fav {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s;
+    backdrop-filter: blur(4px);
+  }
+  .product-fav:hover {
+    background: #fff;
+    transform: scale(1.15);
+  }
+  .product-fav.active {
+    color: #E8725A;
+  }
+  .product-info {
+    padding: 18px 20px;
+  }
+  .product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .product-tags {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .product-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--green-faint);
+    color: var(--green-deep);
+    letter-spacing: 0.5px;
+  }
+  .product-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .product-price {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #D4553E;
+  }
+  .product-price .yen {
+    font-size: 14px;
+    margin-right: 2px;
+  }
+  .product-price .original {
+    font-size: 12px;
+    color: var(--text-light);
+    text-decoration: line-through;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  .product-sold {
+    font-size: 11px;
+    color: var(--text-light);
+  }
+
+  /* ===== 新品上新 ===== */
+  .new-arrivals {
+    background: linear-gradient(180deg, var(--white), var(--green-faint));
+  }
+  .new-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .new-feature {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--beige);
+    min-height: 380px;
+  }
+  .new-feature-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    background: linear-gradient(135deg, var(--green-faint), var(--cream));
+  }
+  .new-feature-info {
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .new-feature-badge {
+    display: inline-block;
+    background: var(--green-faint);
+    color: var(--green-deep);
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    width: fit-content;
+    font-weight: 500;
+  }
+  .new-feature-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 26px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .new-feature-desc {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .new-feature-price {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    color: #D4553E;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .new-feature-price .yen { font-size: 16px; }
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--green-mid);
+    color: var(--green-deep);
+    padding: 10px 32px;
+    border-radius: 50px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: fit-content;
+    font-weight: 500;
+  }
+  .btn-outline:hover {
+    background: var(--green-deep);
+    color: var(--white);
+    border-color: var(--green-deep);
+  }
+
+  .new-small-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .new-small-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--beige);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .new-small-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--green-pale);
+  }
+  .new-small-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    background: linear-gradient(135deg, var(--cream), var(--green-faint));
+  }
+  .new-small-info {
+    padding: 16px 20px;
+  }
+  .new-small-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  .new-small-price {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 18px;
+    color: #D4553E;
+    font-weight: 700;
+  }
+  .new-small-price .yen { font-size: 12px; }
+
+  /* ===== 买家秀 ===== */
+  .buyer-show { background: var(--cream); }
+  .buyer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .buyer-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--beige);
+    transition: all 0.3s;
+  }
+  .buyer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  .buyer-img {
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    position: relative;
+  }
+  .buyer-img::after {
+    content: '📸';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: rgba(255,255,255,0.85);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buyer-body {
+    padding: 20px;
+  }
+  .buyer-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .buyer-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green-faint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .buyer-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+  .buyer-date {
+    font-size: 11px;
+    color: var(--text-light);
+  }
+  .buyer-stars {
+    color: #F5A623;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .buyer-text {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+
+  /* ===== 店铺故事 ===== */
+  .story {
+    background: var(--white);
+  }
+  .story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .story-img {
+    height: 400px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    background: linear-gradient(135deg, var(--green-faint), var(--cream));
+    border: 1px solid var(--beige);
+  }
+  .story-text h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    color: var(--green-deep);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  .story-text p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 2;
+    margin-bottom: 16px;
+  }
+  .story-values {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  .story-value {
+    text-align: center;
+    flex: 1;
+  }
+  .story-value-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .story-value-label {
+    font-size: 12px;
+    color: var(--text-mid);
+    letter-spacing: 1px;
+  }
+
+  /* ===== 服务保障 ===== */
+  .services {
+    background: var(--green-faint);
+    padding: 50px 0;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .service-item {
+    text-align: center;
+    padding: 24px;
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--green-pale);
+    transition: all 0.3s;
+  }
+  .service-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+  }
+  .service-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  .service-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .service-desc {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* ===== 页脚 ===== */
+  .footer {
+    background: var(--green-deep);
+    color: var(--green-pale);
+    padding: 50px 0 30px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-brand h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: 4px;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.8;
+    opacity: 0.8;
+  }
+  .footer h4 {
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .footer ul {
+    list-style: none;
+  }
+  .footer li {
+    margin-bottom: 10px;
+  }
+  .footer a {
+    color: var(--green-pale);
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  .footer a:hover {
+    opacity: 1;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  /* ===== 回到顶部 ===== */
+  .back-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--green-deep);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .back-top.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .back-top:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 900px) {
+    .hero { height: 400px; }
+    .hero-title { font-size: 32px; }
+    .cat-grid { grid-template-columns: repeat(3, 1fr); }
+    .hot-grid { grid-template-columns: repeat(2, 1fr); }
+    .new-feature { grid-template-columns: 1fr; }
+    .new-feature-img { height: 260px; }
+    .buyer-grid { grid-template-columns: 1fr; }
+    .story-content { grid-template-columns: 1fr; gap: 30px; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero { height: 340px; }
+    .hero-title { font-size: 26px; letter-spacing: 4px; }
+    .hero-stats { gap: 24px; }
+    .cat-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .cat-item { padding: 18px 10px; }
+    .cat-emoji { font-size: 30px; }
+    .hot-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .product-img { height: 200px; }
+    .new-small-grid { grid-template-columns: 1fr; }
+    .section { padding: 48px 0; }
+    .section-title { font-size: 24px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== 滚动动画 ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部公告条 -->
+<div class="top-bar">
+  <span class="marquee">🌿 全店满199减20 · 满299减40 · 新客首单立享9折 · 顺丰包邮 🌿</span>
+</div>
+
+<!-- 店铺头图 -->
+<header class="hero">
+  <div class="hero-bg-decor">
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌿</span>
+    <span class="leaf">🍂</span>
+    <span class="leaf">🌾</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-logo">🌸</div>
+    <h1 class="hero-title">花间集</h1>
+    <p class="hero-sub">田 园 森 系 · 自 然 之 美</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">12.8万</div>
+        <div class="hero-stat-label">粉丝关注</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4.9</div>
+        <div class="hero-stat-label">店铺评分</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">98%</div>
+        <div class="hero-stat-label">好评率</div>
+      </div>
+    </div>
+    <a href="#hot" class="hero-btn">进 店 逛 逛</a>
+  </div>
+</header>
+
+<!-- 店铺公告 -->
+<div class="container">
+  <div class="announcement fade-up">
+    <span class="announcement-icon">📢</span>
+    <span class="announcement-tag">最新公告</span>
+    <div class="announcement-text">
+      <strong>【春夏上新季】</strong>2026春夏新品已全面上架！本期主打天然棉麻系列，亲肤透气，还原自然本真。
+      收藏店铺并关注微淘，第一时间获取新品资讯与专属优惠券 🌷
+    </div>
+  </div>
+</div>
+
+<!-- 分类导航 -->
+<section class="categories section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-icon">🏷️</span>
+      <h2 class="section-title">分类导航</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">找到属于你的田园风格</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-item fade-up" href="#">
+        <span class="cat-emoji">👗</span>
+        <div class="cat-name">连衣裙</div>
+        <div class="cat-count">326 款</div>
+      </a>
+      <a class="cat-item fade-up" href="#">
+        <span class="cat-emoji">👚</span>
+        <div class="cat-name">上衣/衬衫</div>
+        <div class="cat-count">218 款</div>
+      </a>
+      <a class="cat-item fade-up" href="#">
+        <span class="cat-emoji">👖</span>
+        <div class="cat-name">半裙/裤装</div>
+        <div class="cat-count">185 款</div>
+      </a>
+      <a class="cat-item fade-up" href="#">
+        <span class="cat-emoji">🧥</span>
+        <div class="cat-name">外套/开衫</div>
+        <div class="cat-count">142 款</div>
+      </a>
+      <a class="cat-item fade-up" href="#">
+        <span class="cat-emoji">👒</span>
+        <div class="cat-name">配饰/帽子</div>
+        <div class="cat-count">96 款</div>
+      </a>
+      <a class="cat-item fade-up" href="#">
+        <span class="cat-emoji">🎁</span>
+        <div class="cat-name">套装/福袋</div>
+        <div class="cat-count">58 款</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 爆款推荐 -->
+<section id="hot" class="hot section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-icon">🔥</span>
+      <h2 class="section-title">爆款推荐</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">万人收藏 · 口碑之选</p>
+    </div>
+    <div class="hot-grid">
+      <div class="product-card fade-up">
+        <div class="product-img" style="background: linear-gradient(135deg, #E8F0E0, #F5EDDF);">
+          <div class="product-img-inner">👗</div>
+          <span class="product-badge">TOP1</span>
+          <button class="product-fav" onclick="this.classList.toggle('active')">♡</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">法式碎花棉麻连衣裙 温柔气质田园风 V领收腰显瘦中长裙</div>
+          <div class="product-tags">
+            <span class="product-tag">纯棉</span>
+            <span class="product-tag">A字版型</span>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price"><span class="yen">¥</span>168<span class="original">¥258</span></div>
+            <div class="product-sold">已售 3.2万</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-img" style="background: linear-gradient(135deg, #F5EDDF, #FDF8F0);">
+          <div class="product-img-inner">👚</div>
+          <span class="product-badge">TOP2</span>
+          <button class="product-fav" onclick="this.classList.toggle('active')">♡</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">刺绣棉麻衬衫女 日系森系翻领 泡泡袖宽松上衣 百搭通勤</div>
+          <div class="product-tags">
+            <span class="product-tag">刺绣</span>
+            <span class="product-tag">棉麻</span>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price"><span class="yen">¥</span>128<span class="original">¥199</span></div>
+            <div class="product-sold">已售 2.8万</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-img" style="background: linear-gradient(135deg, #FDF8F0, #E8F0E0);">
+          <div class="product-img-inner">🧥</div>
+          <span class="product-badge">TOP3</span>
+          <button class="product-fav" onclick="this.classList.toggle('active')">♡</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">针织开衫外套女 森系慵懒风 纯色百搭短款 春秋薄款防晒衫</div>
+          <div class="product-tags">
+            <span class="product-tag">针织</span>
+            <span class="product-tag">百搭</span>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price"><span class="yen">¥</span>89<span class="original">¥159</span></div>
+            <div class="product-sold">已售 1.9万</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-img" style="background: linear-gradient(135deg, #E8DCC8, #F5EDDF);">
+          <div class="product-img-inner">👖</div>
+          <span class="product-badge">TOP4</span>
+          <button class="product-fav" onclick="this.classList.toggle('active')">♡</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">高腰棉麻阔腿裤女 垂感直筒拖地裤 文艺复古宽松休闲长裤</div>
+          <div class="product-tags">
+            <span class="product-tag">高腰</span>
+            <span class="product-tag">阔腿</span>
+          </div>
+          <div class="product-bottom">
+            <div class="product-price"><span class="yen">¥</span>138<span class="original">¥218</span></div>
+            <div class="product-sold">已售 1.5万</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 新品上新 -->
+<section class="new-arrivals section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-icon">🌱</span>
+      <h2 class="section-title">新品上新</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">2026 春夏新品 · 焕新你的衣橱</p>
+    </div>
+    <div class="new-grid">
+      <div class="new-feature fade-up">
+        <div class="new-feature-img">🌸</div>
+        <div class="new-feature-info">
+          <span class="new-feature-badge">✨ 设计师款</span>
+          <h3 class="new-feature-title">春日花园系列<br>碎花棉麻套装</h3>
+          <p class="new-feature-desc">
+            甄选日本进口棉麻面料，手工植物染色工艺，每一件都是独一无二的春日艺术品。
+            上衣 + 半裙两件套，轻松穿出田园诗意感。
+          </p>
+          <div class="new-feature-price"><span class="yen">¥</span>298</div>
+          <a href="#" class="btn-outline">立即抢购 →</a>
+        </div>
+      </div>
+      <div class="new-small-grid fade-up">
+        <div class="new-small-card">
+          <div class="new-small-img" style="background: linear-gradient(135deg, #F5EDDF, #E8F0E0);">🧶</div>
+          <div class="new-small-info">
+            <div class="new-small-name">钩花镂空罩衫 · 棉麻混纺</div>
+            <div class="new-small-price"><span class="yen">¥</span>99</div>
+          </div>
+        </div>
+        <div class="new-small-card">
+          <div class="new-small-img" style="background: linear-gradient(135deg, #E8F0E0, #FDF8F0);">🪻</div>
+          <div class="new-small-info">
+            <div class="new-small-name">薰草紫亚麻半裙 · 高腰A字</div>
+            <div class="new-small-price"><span class="yen">¥</span>158</div>
+          </div>
+        </div>
+        <div class="new-small-card">
+          <div class="new-small-img" style="background: linear-gradient(135deg, #FDF8F0, #E8DCC8);">🌻</div>
+          <div class="new-small-info">
+            <div class="new-small-name">向日葵刺绣T恤 · 纯棉亲肤</div>
+            <div class="new-small-price"><span class="yen">¥</span>79</div>
+          </div>
+        </div>
+        <div class="new-small-card">
+          <div class="new-small-img" style="background: linear-gradient(135deg, #E8DCC8, #F5EDDF);">🎀</div>
+          <div class="new-small-info">
+            <div class="new-small-name">蝴蝶结草编帽 · 防晒遮阳</div>
+            <div class="new-small-price"><span class="yen">¥</span>68</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 买家秀 -->
+<section class="buyer-show section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-icon">📷</span>
+      <h2 class="section-title">买家秀</h2>
+      <div class="section-line"></div>
+      <p class="section-desc">来自真实买家的田园穿搭分享</p>
+    </div>
+    <div class="buyer-grid">
+      <div class="buyer-card fade-up">
+        <div class="buyer-img" style="background: linear-gradient(135deg, #E8F0E0, #F5EDDF);">🧝‍♀️</div>
+        <div class="buyer-body">
+          <div class="buyer-user">
+            <div class="buyer-avatar">🌷</div>
+            <div>
+              <div class="buyer-name">小鹿斑比</div>
+              <div class="buyer-date">2026-05-06</div>
+            </div>
+          </div>
+          <div class="buyer-stars">★★★★★</div>
+          <div class="buyer-text">面料真的好舒服！棉麻质地很透气，碎花图案超好看，穿上整个人都温柔了～朋友们都说像从油画里走出来的！已经回购第三件了 💕</div>
+        </div>
+      </div>
+      <div class="buyer-card fade-up">
+        <div class="buyer-img" style="background: linear-gradient(135deg, #F5EDDF, #FDF8F0);">🧚‍♀️</div>
+        <div class="buyer-body">
+          <div class="buyer-user">
+            <div class="buyer-avatar">🌻</div>
+            <div>
+              <div class="buyer-name">森林里的风</div>
+              <div class="buyer-date">2026-05-03</div>
+            </div>
+          </div>
+          <div class="buyer-stars">★★★★★</div>
+          <div class="buyer-text">刺绣衬衫太精致了，每一针都看得出用心。版型宽松不挑身材，配牛仔裤或者半裙都好看。客服也超耐心，尺码推荐很准！</div>
+        </div>
+      </div>
+      <div class="buyer-card fade-up">
+        <div class="buyer-img" style="background: linear-gradient(135deg, #FDF8F0, #E8F0E0);">👩‍🌾</div>
+        <div class="buyer-body">
+          <div class="buyer-user">
+            <div class="buyer-avatar">🍃</div>
+            <div>
+              <div class="buyer-name">一朵云的旅行</div>
+              <div class="buyer-date">2026-04-28</div>
+            </div>
+          </div>
+          <div class="buyer-stars">★★★★★</div>
+          <div class="buyer-text">开衫颜色温柔到爆！薄款刚好适合春末夏初，空调房也能穿。质量对得起价格，已经被安利给了整个办公室的姐妹们 🌿</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 店铺故事 -->
+<section class="story section">
+  <div class="container">
+    <div class="story-content fade-up">
+      <div class="story-img">🏡</div>
+      <div class="story-text">
+        <h3>关于我们 · 花间集</h3>
+        <p>花间集创立于2018年，源于对田园生活的热爱与向往。我们相信，衣物不只是穿着，更是一种生活态度的表达。</p>
+        <p>每一件单品都甄选天然面料——棉、麻、丝、毛，采用环保植物染色与手工刺绣工艺，将自然之美融入每一针每一线。</p>
+        <p>从设计打版到成衣制作，我们坚持小批量、高品质的生产模式，拒绝快时尚的浮躁，只为给你带来真正值得珍藏的衣物。</p>
+        <div class="story-values">
+          <div class="story-value">
+            <div class="story-value-icon">🌿</div>
+            <div class="story-value-label">天然面料</div>
+          </div>
+          <div class="story-value">
+            <div class="story-value-icon">🧵</div>
+            <div class="story-value-label">手工匠心</div>
+          </div>
+          <div class="story-value">
+            <div class="story-value-icon">♻️</div>
+            <div class="story-value-label">环保理念</div>
+          </div>
+          <div class="story-value">
+            <div class="story-value-icon">💝</div>
+            <div class="story-value-label">用心服务</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 服务保障 -->
+<section class="services">
+  <div class="container">
+    <div class="service-grid">
+      <div class="service-item fade-up">
+        <div class="service-icon">🚚</div>
+        <div class="service-title">顺丰包邮</div>
+        <div class="service-desc">全场满99元顺丰发货</div>
+      </div>
+      <div class="service-item fade-up">
+        <div class="service-icon">🔄</div>
+        <div class="service-title">7天无理由</div>
+        <div class="service-desc">不满意随时退换</div>
+      </div>
+      <div class="service-item fade-up">
+        <div class="service-icon">🏷️</div>
+        <div class="service-title">正品保障</div>
+        <div class="service-desc">原创设计 假一赔十</div>
+      </div>
+      <div class="service-item fade-up">
+        <div class="service-icon">💬</div>
+        <div class="service-title">贴心客服</div>
+        <div class="service-desc">9:00-22:00 在线解答</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>🌸 花间集</h3>
+        <p>田园森系原创女装品牌<br>用天然面料与手工匠心<br>为你编织自然之美</p>
+      </div>
+      <div>
+        <h4>购物指南</h4>
+        <ul>
+          <li><a href="#">尺码说明</a></li>
+          <li><a href="#">面料指南</a></li>
+          <li><a href="#">洗涤保养</a></li>
+          <li><a href="#">搭配建议</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>售后服务</h4>
+        <ul>
+          <li><a href="#">退换货政策</a></li>
+          <li><a href="#">物流查询</a></li>
+          <li><a href="#">发票服务</a></li>
+          <li><a href="#">投诉建议</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关注我们</h4>
+        <ul>
+          <li><a href="#">📱 微信号</a></li>
+          <li><a href="#">📷 小红书</a></li>
+          <li><a href="#">🎵 抖音号</a></li>
+          <li><a href="#">📺 微博</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 花间集 · 田园森系女装 ｜ 用心做好每一件衣服
+    </div>
+  </div>
+</footer>
+
+<!-- 回到顶部 -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // 滚动动画
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // 回到顶部按钮
+  window.addEventListener('scroll', () => {
+    document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // 收藏按钮心跳动画
+  document.querySelectorAll('.product-fav').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.style.transform = 'scale(1.3)';
+      setTimeout(() => this.style.transform = '', 200);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "宠物店智能管理系统",
+  "description": "融合AI技术的宠物店智能多角色管理系统，包含PC端老板及店长后台，移动端美容师及洗护师管理助理，以及移动端小程序客户预约与宠物AI健康问诊。",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
